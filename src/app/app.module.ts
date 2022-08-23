@@ -4,16 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { GaugeModule } from 'angular-gauge';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { FormsModule }   from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
- GaugeModule.forRoot(),
+    GaugeModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
