@@ -5,18 +5,19 @@
 }
 
 ::ng-deep {
+
   .mat-select-value,
   .mat-select-arrow,
   .mat-form-field-hide-placeholder.mat-select-placeholder,
   .mat-form-field-appearance-legacy.mat-form-field-label {
-    color: #000  !important;
+    color: #000 !important;
     opacity: 1;
   }
 
   .mat-form-field-infix {
-    border-color: #000  !important;
+    border-color: #000 !important;
     border-top: none;
-    padding-left: 5px ;
+    padding-left: 5px;
     background-color: #3f88b5;
   }
 
@@ -29,35 +30,40 @@
 
   }
 }
-.games{
+
+.games {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
   margin: 20px auto;
 }
-.game{
+
+.game {
   width: 280px;
   margin: 10px;
   height: 330px;
   overflow: hidden;
   border-radius: 5px;
-  background-color:  #6dc0e7a4;
+  background-color: #6dc0e7a4;
   box-shadow: 4px 3px 8px 0px;
   transition-duration: 0.3s;
   cursor: pointer;
-  &:hover{
-   box-shadow: 4px 3px 11px 6px rgb(109, 73, 73); 
-   transform: translateY(-3px);
+
+  &:hover {
+    box-shadow: 4px 3px 11px 6px rgba(140, 186, 227, 0.728);
+    transform: translateY(-3px);
   }
-  &-thump-container{
+
+  &-thump-container {
     background-color: #000;
     position: relative;
     height: 172px;
     color: #000;
     text-align: center;
   }
-  &-thumbnail{
+
+  &-thumbnail {
     position: absolute;
     top: 0;
     left: 0;
@@ -65,27 +71,31 @@
     margin: 0 auto;
     height: 172px;
   }
-  &-description{
+
+  &-description {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 157px;
   }
-  &-name{
+
+  &-name {
     color: #000;
     font-weight: 700;
     font-size: 22px;
     margin-bottom: 20px;
-    white-space:nowrap;
+    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 
   }
-  &-platforms{
+
+  &-platforms {
     display: flex;
   }
-  &-platform{
+
+  &-platform {
     width: 20px;
     margin-right: 10px;
   }
