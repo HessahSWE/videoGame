@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from "@angular/common/http"
+import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +25,20 @@ import {HttpClientModule} from "@angular/common/http"
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpHeadersInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpHeadersInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
