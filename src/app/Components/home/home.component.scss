@@ -1,5 +1,5 @@
 .filters {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 10px auto;
   padding-left: 20px;
 }
@@ -9,15 +9,15 @@
   .mat-select-arrow,
   .mat-form-field-hide-placeholder.mat-select-placeholder,
   .mat-form-field-appearance-legacy.mat-form-field-label {
-    color: #fff  !important;
+    color: #000  !important;
     opacity: 1;
   }
 
   .mat-form-field-infix {
-    border-color: #fff  !important;
+    border-color: #000  !important;
     border-top: none;
     padding-left: 5px ;
-    background-color:#3f51b5;
+    background-color: #3f88b5;
   }
 
   .mat-form-field-appearance-legacy.mat-form-field-label {
@@ -25,17 +25,16 @@
   }
 
   .mat-form-field-appearance-legacy.mat-form-field-underline {
-    background-color: #fff !important;
+    background-color: #000 !important;
 
   }
 }
 .games{
-  display: inline-block;
+  display: flex;
   flex-wrap:wrap;
   justify-content: center;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 20px auto;
-  background-color: yellow;
 }
 .game{
   width: 280px;
@@ -43,7 +42,7 @@
   height: 330px;
   overflow: hidden;
   border-radius: 5px;
-  background-color: #fff;
+  background-color:  #6dc0e7a4;
   box-shadow: 4px 3px 8px 0px;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -51,11 +50,11 @@
    box-shadow: 4px 3px 11px 6px rgb(109, 73, 73); 
    transform: translateY(-3px);
   }
-  &-thumb-container{
+  &-thump-container{
     background-color: #000;
     position: relative;
     height: 172px;
-    color: #fff;
+    color: #000;
     text-align: center;
   }
   &-thumbnail{
@@ -72,5 +71,22 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 157px;
+  }
+  &-name{
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+  }
+  &-platforms{
+    display: flex;
+  }
+  &-platform{
+    width: 20px;
+    margin-right: 10px;
   }
 }
