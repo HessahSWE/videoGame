@@ -9,7 +9,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http"
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 @NgModule({
   declarations: [
