@@ -19,10 +19,12 @@
         <p *ngIf="!game.background_image">No image</p>
       </div>
       <div class="game-description">
-        <p class="game-name">{{ game.name}}</p>
+        <p class="game-name">{{ game.parent_platforms.slug}}</p>
         <div class="game-platforms">
-          <img src="img/moviesAnne.jpg" alt="slug" class="game-platform" />
-        </div>
+          <!-- <img *ngFor="let gamePlatform of game.parent_platforms"
+            src="assets/images/platforms/{{gamePlatform.platform.slug}}.svg" alt="{{gamePlatform.platform.slug}}"
+            class="game-platform" />
+        </div> -->
       </div>
     </div>
   </ng-container>
