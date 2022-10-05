@@ -20,6 +20,7 @@ export class HttpService {
     return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
       params: params,
     });
+   
   }
   getGameDetails(
     id?: string,): Observable<Game> {
@@ -27,9 +28,6 @@ export class HttpService {
     const gameInfoRequest = this.http.get(`${env.BASE_URL}/games/${id}`);
     const gameTrailersRequest = this.http.get(`${env.BASE_URL}/games/${id}/movies`);
     const gameScreenShotRequest = this.http.get(`${env.BASE_URL}/games/${id}/screenshots`);
-    console.log(gameInfoRequest);
-    console.log(gameTrailersRequest);
-    console.log(gameScreenShotRequest);
     return forkJoin({
       gameInfoRequest,
       gameTrailersRequest,

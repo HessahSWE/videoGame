@@ -26,7 +26,6 @@ export class DetailsComponent implements OnInit , OnDestroy{
     console.log("eeeeeeeeeeeeeeeeeeeeee");
     this.routerSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
-      console.log("eeeeeeeeeeeeeeeeeeeeee",this.getGameDetails(this.gameId!));
       this.getGameDetails(this.gameId!);
     });
   }
