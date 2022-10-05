@@ -13,9 +13,8 @@ export class DetailsComponent implements OnInit , OnDestroy{
   gameRating = 0;
   game?: Game;
   gameId?: string ;
-  routerSub?: Subscription ;
-  gameSub?: Subscription;
-  games?: Array<Game>;
+  private routerSub?: Subscription ;
+  private gameSub?: Subscription;
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService
@@ -27,6 +26,7 @@ export class DetailsComponent implements OnInit , OnDestroy{
     this.routerSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId!);
+      console.log("eeeeeeeeeeeeeeeeeeeeee",this.game?.name);
     });
   }
   getGameDetails(id: string): void {
