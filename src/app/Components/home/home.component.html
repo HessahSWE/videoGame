@@ -1,7 +1,7 @@
 <div class="p">
   <mat-form-field>
     <mat-label>Sort</mat-label>
-    <mat-select panelClass="sort-select" [(ngModel)]="sort">
+    <mat-select panelClass="sort-select" [(ngModel)]="sort" (selectionChange)="searchGames(sort)" >
       <mat-option value="name">Name</mat-option>
       <mat-option value="released">Released</mat-option>
       <mat-option value="created">Created</mat-option>
@@ -13,7 +13,7 @@
 </div>
 <div class="games">
   <ng-container *ngFor="let game of games">
-    <div class="game">
+    <div class="game" (click)="openGameDetails(game.id)">
       <div class="game-thump-container">
         <img *ngIf="game.background_image" src="{{ game.background_image }}" alt="thumbnail" class="game-thumbnail" />
         <p *ngIf="!game.background_image">No image</p>
@@ -24,7 +24,7 @@
           <img *ngFor="let gamePlatform of game.parent_platforms"
             src="assets/images/platforms/{{gamePlatform.platform.slug}}.svg" alt="{{gamePlatform.platform.slug}}"
             class="game-platform" />
-        </div> 
+        </div>
       </div>
     </div>
   </ng-container>
