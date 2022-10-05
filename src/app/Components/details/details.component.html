@@ -1,12 +1,12 @@
 <div class="deteils">
   <div class="game-banner">
-    <img class="game-banner-img" src="" alt="background image" />
+    <img class="game-banner-img" src="{{ game.background_image }}" alt="background image" />
   </div>
   <div class="game-content">
     <div class="deteils-warapper">
       <div class="game-header">
         <h1 class="game-header-title"> {{ game.name}}</h1>
-        <h2 class="game-header-release-date"> Release:game.released | date | undefined }}  </h2>
+        <h2 class="game-header-release-date"> Release:{{ game.released | date }} </h2>
         <p class="game-header-genres">
           <span>SWE</span>
         </p>
@@ -14,7 +14,7 @@
           <mwl-gauge class="two" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="gameRating"
             [animated]="true" [color]="getColor" [animationDuration]="2">
           </mwl-gauge>
-          <a class="game-gauge-label" target="_blank">Meteoritic</a>
+          <a class="game-gauge-label" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
         </div>
       </div>
     </div>
