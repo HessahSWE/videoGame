@@ -9,11 +9,11 @@ import { HttpService } from 'src/app/service/http.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit , OnDestroy{
+export class DetailsComponent implements OnInit, OnDestroy {
   gameRating = 0;
-  game?: Game;
-  gameId?: string ;
-  private routerSub?: Subscription ;
+  game!: Game;
+  gameId!: string;
+  private routerSub?: Subscription;
   private gameSub?: Subscription;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,19 +22,16 @@ export class DetailsComponent implements OnInit , OnDestroy{
   }
 
   ngOnInit(): void {
-    console.log("eeeeeeeeeeeeeeeeeeeeee");
     this.routerSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId!);
-      console.log("eeeeeeeeeeeeeeeeeeeeee",this.game?.name);
     });
   }
   getGameDetails(id: string): void {
     this.gameSub = this.httpService
       .getGameDetails(id)
-      .subscribe((gameResp : Game) => {
+      .subscribe((gameResp: Game) => {
         this.game = gameResp;
-
         setTimeout(() => {
           this.gameRating = this.game!.metacritic;
         }, 1000);
