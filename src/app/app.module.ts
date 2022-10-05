@@ -11,11 +11,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http"
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
+import { DetailsComponent } from './Components/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

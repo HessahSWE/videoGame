@@ -9,8 +9,8 @@ import { HttpService } from 'src/app/service/http.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit ,OnDestroy{
-  sort?: string ;
+export class HomeComponent implements OnInit, OnDestroy {
+  sort?: string;
   games?: Array<Game>;
   private routerSub?: Subscription;
   private gameSub?: Subscription;
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit ,OnDestroy{
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -32,21 +32,21 @@ export class HomeComponent implements OnInit ,OnDestroy{
     });
   }
   searchGames(sort?: string, search?: string): void {
-    this.gameSub=this.httpService.getGameList(sort!, search).subscribe((
+    this.gameSub = this.httpService.getGameList(sort!, search).subscribe((
       gameList: APIResponse<Game>) => {
       this.games = gameList.results;
       console.log(gameList);
     });
   }
-  openGameDetails(id:string) : void{
+  openGameDetails(id: string): void {
     console.log(id);
-    this.router.navigate(['details',id])
+    this.router.navigate(['details', id])
   }
-  ngOnDestroy():void{
-    if(this.gameSub){
+  ngOnDestroy(): void {
+    if (this.gameSub) {
       this.gameSub.unsubscribe();
     }
-    if(this.routerSub)
-    this.routerSub.unsubscribe();
+    if (this.routerSub)
+      this.routerSub.unsubscribe();
   }
 }
