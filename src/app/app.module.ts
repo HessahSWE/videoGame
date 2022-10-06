@@ -12,12 +12,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http"
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { DetailsComponent } from './Components/details/details.component';
+import { GameTabComponent } from './Components/game-tab/game-tab.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon'
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
     DetailsComponent,
+    GameTabComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { DetailsComponent } from './Components/details/details.component';
     BrowserAnimationsModule,
     MatSelectModule,
     HttpClientModule,
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [
     {
