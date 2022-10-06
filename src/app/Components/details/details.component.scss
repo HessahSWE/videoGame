@@ -18,7 +18,7 @@
     }
 
     .value-text {
-      fill: white;
+      fill: #000;
       font-weight: 700;
       font-size: 24px;
       //background-color: orange !important;
@@ -33,7 +33,7 @@
 
     &-label {
       font-size: 20px;
-      color: white;
+      color: #000;
       position: relative;
       bottom: 60px;
     }
@@ -63,7 +63,7 @@
   &-header {
     &-title {
       font-size: 70px;
-      color: white;
+      color: #000;
       font-weight: 700;
       line-height: 70px;
       white-space: nowrap;
@@ -71,12 +71,12 @@
     }
 
     &-release-date {
-      color: white;
+      color: #000;
       //background-color: rgb(255, 0, 255) !important
     }
 
     &-genres {
-      color: white;
+      color: #000;
       font-weight: 700;
       //background-color: rgb(34, 0, 255) !important
     }

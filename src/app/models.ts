@@ -37,7 +37,7 @@ interface Rating {
   title: string;
 }
 interface Screenshots {
-  img: string;
+  image: string;
 }
 interface Trailer {
   data: {
